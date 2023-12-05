@@ -3,11 +3,11 @@ import Nav from "@components/Nav";
 import Header from "@components/Header";
 import SearchArea from "@components/SearchArea";
 import Result from "@components/Result";
-import { inter } from "@util/font";
+import { SearchContextProvider } from "@context/searchContext";
 
 export default function Home() {
   return (
-    <section className={`h-screen  mx-auto ${inter.classname}`}>
+    <section className={`h-screen  mx-auto `}>
       <Head>
         <title>Blockchain Explorer</title>
       </Head>

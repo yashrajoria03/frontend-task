@@ -17,6 +17,7 @@ const header = () => {
         )
         .then((response) => {
           setEthPrice(response.data.result.ethusd);
+          // console.log(response.data.result.ethusd);
         })
         .catch((error) => {
           console.log(error);

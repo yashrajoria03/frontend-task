@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 
-export const inter = Inter({
+export const inter = new Inter({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weights: [300, 400, 500, 600, 700],
+  variable: "--font-inter",
 });

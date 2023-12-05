@@ -5,8 +5,8 @@ import Link from "next/link";
 import { navItems } from "@public/data/data";
 
 const renderItems = navItems.map((item, idx) => (
-  <span>
-    <Link href={item.url} className=" font-medium text-lg" key={idx}>
+  <span key={idx}>
+    <Link href={item.url} className=" font-medium text-lg">
       {item.title}
     </Link>
   </span>
@@ -44,12 +44,12 @@ const Nav = () => {
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 "
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 "
             aria-controls="navbar-default"
             aria-expanded="false"
             onClick={toggleNavbar}
           >
-            <span class="sr-only">Open main menu</span>
+            <span className="sr-only">Open main menu</span>
             <svg
               className="h-6 w-6"
               xmlns="http://www.w3.org/2000/svg"
@@ -69,12 +69,12 @@ const Nav = () => {
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 "
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 "
             aria-controls="navbar-default"
             aria-expanded="false"
             onClick={toggleNavbar}
           >
-            <span class="sr-only">Open main menu</span>
+            <span className="sr-only">Open main menu</span>
             <svg
               className="h-6 w-6"
               xmlns="http://www.w3.org/2000/svg"

@@ -14,9 +14,6 @@ module.exports = {
         accentBlue: "#D6E5FA",
         text: "#242424",
       },
-      fontFamily: {
-        Inter: "Inter, sans-serif",
-      },
     },
   },
   plugins: [],
