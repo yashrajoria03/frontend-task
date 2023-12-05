@@ -1,9 +1,19 @@
 "use client";
 import React, { useState } from "react";
+import SearchContext from "@context/searchContext";
+import { useContext } from "react";
 
 const SearchArea = () => {
   const [query, setQuery] = useState(null);
-  const handleSearch = () => {};
+
+  const [state, dispatch] = useContext(SearchContext);
+
+  const handleSearch = () => {
+    dispatch({
+      type: "NEW_SEARCH",
+      payload: query,
+    });
+  };
 
   return (
     <section className="bg-violet-600 h-[30vh] mt-4 flex flex-col  justify-center">
