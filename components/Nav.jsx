@@ -34,11 +34,12 @@ const Nav = () => {
 
         <div className="hidden w-full md:w-auto items-center justify-center md:flex ">
           <div className="space-x-12 mr-10">{renderItems}</div>
-          <button className="px-4 py-2 border-2 border-primary rounded-md  font-medium text-purple-600 hover:text-purple-800 text-lg">
+          <button className="px-4 py-2 border-2 border-primary rounded-md  font-medium text-white hover:text-purple-800 text-lg bg-primary">
             Connect Wallet
           </button>
         </div>
         {/* Hamburger Menu Button */}
+
         {isClick ? (
           <button
             data-collapse-toggle="navbar-default"
@@ -93,11 +94,13 @@ const Nav = () => {
       </div>
 
       {/* hamburger Menu Items */}
+
       {isClick ? (
         <div className="w-full flex flex-col items-end justify-center px-4  bg-white shadow md:hidden  my-2 ">
           <div className="w-full space-y-2  flex flex-col items-end justify-center">
             {renderItems}
           </div>
+
           <button className="font-medium  text-lg">Connect Wallet</button>
         </div>
       ) : null}
