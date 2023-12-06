@@ -12,7 +12,8 @@ const inititalState = {
 
 const Result = () => {
   const { tag, SearchDispatch } = useContext(SearchContext);
-
+  const [start, setStart] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [result, setResult] = useState(inititalState);
 
   const fetchBalance = async () => {
@@ -63,18 +64,42 @@ const Result = () => {
   };
 
   useEffect(() => {
-    if (tag != null && tag != "") {
-      fetchBalance();
-      fetchTxn();
-      getERCTxn();
-    }
+    const fetchData = async () => {
+      setStart(true);
+      if (tag != null && tag !== "") {
+        await Promise.all([fetchBalance(), fetchTxn(), getERCTxn()]);
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
   }, [tag]);
 
   return (
-    // <div className={`${tag != (null || "") ? "h-[100vh]" : "h-auto"} `}>
-    <div>
-      <Table />
-    </div>
+    start && (
+      <div>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <div>
+            <Table
+              heading="ERC20 Transfer"
+              header={["s.no", "from", "to", "token", "value", "time"]}
+              param={["from", "to", "tokenName", "value"]}
+              data={result.token}
+              query={tag}
+            />
+            <Table
+              heading="Normal Transaction"
+              header={["s.no", "from", "to", "Contract Address", "time"]}
+              param={["from", "to", "contractAddress"]}
+              data={result.transactions}
+              query={tag}
+            />
+          </div>
+        )}
+      </div>
+    )
   );
 };
 
