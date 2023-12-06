@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import SearchContext from "@context/searchContext";
 import axios from "axios";
+import Table from "@components/Table";
 
 const inititalState = {
   balance: 0,
@@ -70,8 +71,9 @@ const Result = () => {
   }, [tag]);
 
   return (
-    <div className={`${tag != (null || "") ? "h-[100vh]" : "h-auto"} `}>
-      "result is here"
+    // <div className={`${tag != (null || "") ? "h-[100vh]" : "h-auto"} `}>
+    <div>
+      <Table />
     </div>
   );
 };
